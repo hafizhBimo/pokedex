@@ -2,9 +2,9 @@ import PokeCardComponent from "./PokeCardComponent";
 
 export default function PokeListComponent({ data }) {
   return (
-    <div>
+    <div className=" grid grid-cols-4 justify-items-center">
       {data.results?.map((item) => {
-        return <PokeCardComponent name={item.name} img={item.url}/>
+        return <PokeCardComponent name={item?.name} url={item?.url}/>
       })}
     </div>
   );
