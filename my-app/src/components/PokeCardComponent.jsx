@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import pokedexNumberFormatter from "../utils/pokedexNumberFormatter";
 
 export default function PokeCardComponent({name, url}){
     const [pokeDetail, setPokeDetail] = useState()
@@ -16,10 +17,12 @@ export default function PokeCardComponent({name, url}){
     useEffect(()=>{
         pokeDataDetail()
     },[name])
+    console.log(pokeDetail)
     return (
         <div style={{height:'100%', maxHeight:'180px'}} className=" flex flex-col">
             <img width={150} src={pokeDetail?.sprites?.front_default}/>
             <a className=" text-center">{name}</a>
+            <a className=" text-center">{pokeDetail && pokedexNumberFormatter(pokeDetail?.id)}</a>
         </div>
     )
 }

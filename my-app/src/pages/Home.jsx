@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import getPokemon from "../api/getPokemon";
-import SearchBarComponent from "../components/SearchBarComponent";
+// import SearchBarComponent from "../components/SearchBarComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import PokeListComponent from "../components/PokeListComponent";
 import Pagination from "../components/Pagination";
@@ -25,7 +25,7 @@ function Home() {
   }, [offset]);
 
   return (
-    <div className=" flex justify-center w-full bg-yellow-200">
+    <div style={{backgroundColor:'#FCCF00'}} className=" flex justify-center w-full">
       <div className="flex-col items-center w-4/6 bg-white">
       <HeaderComponent />
       {/* <SearchBarComponent /> */}
