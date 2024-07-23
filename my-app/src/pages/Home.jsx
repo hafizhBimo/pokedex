@@ -3,12 +3,15 @@ import getPokemon from "../api/getPokemon";
 import SearchBarComponent from "../components/SearchBarComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import PokeListComponent from "../components/PokeListComponent";
+import Pagination from "../components/Pagination";
 
 function Home() {
   const [pokeList, setPokeList] = useState({});
+  const [limit, setLimit] = useState(20)
+  const [offset, setOffset] = useState(0)
   const pokeData = async () => {
     try {
-      const response = await getPokemon();
+      const response = await getPokemon(limit,offset);
       if (response.data) {
         setPokeList(response.data);
       }
@@ -19,14 +22,16 @@ function Home() {
 
   useEffect(() => {
     pokeData();
-  }, []);
+  }, [offset]);
 
-  console.log(pokeList, "ini pokelist");
   return (
-    <div>
+    <div className=" flex justify-center w-full bg-yellow-200">
+      <div className="flex-col items-center w-4/6 bg-white">
       <HeaderComponent />
-      <SearchBarComponent />
+      {/* <SearchBarComponent /> */}
       <PokeListComponent data={pokeList}/>
+      <Pagination count={pokeData?.count} next={pokeData?.next} previous={pokeData?.previous} setOffset={setOffset} offset={offset} limit={limit}/>
+      </div>
     </div>
   );
 }
