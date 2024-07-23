@@ -26,11 +26,13 @@ function Home() {
 
   return (
     <div style={{backgroundColor:'#FCCF00'}} className=" flex justify-center w-full">
-      <div className="flex-col items-center w-4/6 bg-white">
+      <div className="flex-col items-center w-3/6 bg-white">
       <HeaderComponent />
       {/* <SearchBarComponent /> */}
       <PokeListComponent data={pokeList}/>
+      <div className=" m-20">
       <Pagination count={pokeData?.count} next={pokeData?.next} previous={pokeData?.previous} setOffset={setOffset} offset={offset} limit={limit}/>
+      </div>
       </div>
     </div>
   );

@@ -20,8 +20,8 @@ export default function PokeCardComponent({name, url}){
     return (
         <div style={{height:'100%', maxHeight:'180px'}} className=" flex flex-col">
             <img width={150} src={pokeDetail?.sprites?.front_default}/>
-            <a className=" text-center">{name}</a>
-            <a className=" text-center">{pokeDetail && pokedexNumberFormatter(pokeDetail?.id)}</a>
+            <a style={{fontSize:16}} className=" text-center font-bold">{name}</a>
+            <a style={{color:'#2468B1'}} className=" text-center font-semibold">{pokeDetail && pokedexNumberFormatter(pokeDetail?.id)}</a>
         </div>
     )
 }
