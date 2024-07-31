@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import getPokemonDetail from "../api/getPokemonDetail";
+import HeaderComponent from "../components/HeaderComponent";
+import PokeDetail from "../components/PokeDetail";
 
 export default function PokemonDetailPage (){
     const [detailData, setDetailData] = useState()
@@ -22,7 +24,8 @@ export default function PokemonDetailPage (){
     return (
     <div style={{backgroundColor:'#FCCF00'}} className=" flex justify-center w-full">
         <div className="flex-col items-center w-3/6 bg-white">
-            hehe
+            <HeaderComponent />
+            <PokeDetail detailData={detailData}/>
         </div>
     </div>)
 }

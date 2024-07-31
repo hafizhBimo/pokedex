@@ -23,7 +23,7 @@ export default function PokeCardComponent({name, url}){
         pokeDataDetail()
     },[name])
     return (
-        <div onClick={()=>onClick(pokeDetail?.id)} style={{height:'100%', maxHeight:'180px'}} className=" flex flex-col cursor-pointer h-full max-h-180px hover:scale-105 hover:shadow-xl">
+        <div onClick={()=>onClick(pokeDetail?.id)} style={{height:'100%', maxHeight:'200px'}} className=" flex flex-col cursor-pointer h-full max-h-180px hover:scale-105 hover:shadow-xl">
             <img width={150} src={pokeDetail?.sprites?.front_default}/>
             <a style={{fontSize:16}} className=" text-center font-bold">{name}</a>
             <a style={{color:'#2468B1'}} className=" text-center font-semibold">{pokeDetail && pokedexNumberFormatter(pokeDetail?.id)}</a>
